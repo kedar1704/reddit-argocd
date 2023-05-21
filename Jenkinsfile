@@ -17,13 +17,7 @@ pipeline {
                 }
             }
         }
-        stage("Git Checkout of Code"){
-            steps{
-                script{
-                    checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/kedar1704/gitops_argocd_project.git']]])
-                }
-            }
-        }
+       
         stage("Build Docker image"){
             steps{
                 script{
