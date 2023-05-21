@@ -20,9 +20,7 @@ pipeline {
        
         stage("Build Docker image"){
             steps{
-                script{
-                    docker_image = docker.build "${IMAGE_NAME}"
-                }
+                sh 'docker build -t ${IMAGE_NAME} .'
             }
         }
         stage("Push image to dockerhub registry"){
